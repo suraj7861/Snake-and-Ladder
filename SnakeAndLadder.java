@@ -13,16 +13,16 @@ public static int rollDice(){
 	return dice;
     }
 public static void playerOption(){
-	int position=0;
+	int position = 0;
+	int counter = 0;
 
 	while(position < 100){
 	//random values for option
 	int check =(int)(Math.random() * 10) % 3 + 1;
 	System.out.println("check "+check);
-
 	int dice=rollDice();
 	System.out.println("Dice number "+dice);
-	
+	counter++;
 	switch(check){
 		//case for no play
 		case 1:
@@ -44,6 +44,7 @@ public static void playerOption(){
 			}
 			System.out.println("player is  "+position); 
       		}
-       	   }
+	   }
+                        System.out.println("total Couter to win game : "+counter);
      }
 }
