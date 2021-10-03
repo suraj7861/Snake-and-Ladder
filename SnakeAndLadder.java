@@ -14,13 +14,15 @@ public static int rollDice(){
     }
 public static void playerOption(){
 	int position=0;
+
+	while(position < 100){
 	//random values for option
 	int check =(int)(Math.random() * 10) % 3 + 1;
 	System.out.println("check "+check);
 
 	int dice=rollDice();
 	System.out.println("Dice number "+dice);
-
+	
 	switch(check){
 		//case for no play
 		case 1:
@@ -34,7 +36,11 @@ public static void playerOption(){
 		//case for snake , player postion 
 		default:
 			position = position - dice; 
+			if(position < 0){
+				position = 0;
+			}
 			System.out.println("player is  "+position); 
       		}
-	}
+       	   }
+     }
 }
