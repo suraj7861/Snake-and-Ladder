@@ -3,7 +3,7 @@ public class SnakeAndLadder{
 public static void main(String[] args){
 
 	System.out.println("Lets play");
-	playerOption();	
+	playerOption();
    }
 public static int rollDice(){
 	Random rand = new Random();
@@ -29,6 +29,9 @@ public static void playerOption(){
 		// case for player position after play
 		case 2:
 			position = position + dice;
+			if(position > 100){
+				position = position - dice;
+			}
 			System.out.println("player is playing "+position);
 			break;
 		//case for snake , player postion 
